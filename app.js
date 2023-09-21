@@ -29,3 +29,23 @@ function showAlert() {
     alert("Not sure what other options there are");
   }
 }
+
+let userPoints = 0;
+
+let favNum = ["1", "4", "11"];
+
+let Ans = prompt("What are my favourite numbers?");
+
+for (let i = 0; i < favNum.length; i++) {
+  if (Ans === favNum[i]) {
+    alert("You got one");
+    userPoints++;
+  } else {
+    alert("Not quite");
+  }
+}
+
+//if (favFoods.indexOf(foodAns) >= 0) {
+//alert("You got it right!");
+//userPoints++;
+//}
