@@ -30,21 +30,27 @@ function showAlert() {
   }
 }
 
-let userPoints = 0;
-
-let favNum = ["1", "4", "11"];
-
-let Ans = prompt("What are my favourite numbers?");
-
-for (let i = 0; i < favNum.length; i++) {
-  if (Ans === favNum[i]) {
-    alert("You got one");
-    userPoints++;
-  } else {
-    alert("Not quite");
+function guessingGame() {
+  let answer = 3;
+  let number = prompt("Guess a number between 1-10");
+  let attempts = 4;
+  while (attempts >= 1) {
+    attempts--;
+    if (number > answer) {
+      alert("Too high!");
+      number = prompt("Try again! You have " + attempts + " left");
+    } else if (number < answer) {
+      alert("Too low");
+      number = prompt("Try again! You have " + attempts + " left");
+    } else if (parseInt(number) === answer) {
+      alert("Correct!");
+      break;
+    }
+  }
+  if (parseInt(number) !== answer) {
+    alert("Actually the answer was 3");
   }
 }
-
 //if (favFoods.indexOf(foodAns) >= 0) {
 //alert("You got it right!");
 //userPoints++;
